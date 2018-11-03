@@ -23,6 +23,7 @@ particular purpose."
 #include <math.h>		// fabs
 #include <time.h>		// clock, CLOCKS_PER_SEC
 #include <iostream>
+#include <stddef.h>
 
 #ifdef GDEBUG
 #include "startgdb.h"
@@ -72,9 +73,10 @@ typedef struct {
 #define dpotri_ dpotri
 #endif
 
-
-extern "C" void dpotrf_(char* uplo, ptrdiff_t* n, double* A, ptrdiff_t* lda, ptrdiff_t* info);
-extern "C" void dpotri_(char* uplo, ptrdiff_t* n, double* A, ptrdiff_t* lda, ptrdiff_t* info);
+extern "C" {
+    void dpotrf_(char* uplo, long* n, double* A, long* lda, long* info);
+    void dpotri_(char* uplo, long* n, double* A, long* lda, long* info);
+}
 
 
 class fX_Info {

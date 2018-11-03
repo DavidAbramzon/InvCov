@@ -29,7 +29,6 @@ particular purpose."
 #include <stdio.h>
 #include <cstring>
 
-											
 static inline int calcCholeskyU(double* ansU, uint32_t n)
 {
 	// this function gets the matrix ansU and perform the Cholesky factorization on it with LAPACK.
@@ -822,7 +821,7 @@ out:
 }
 
 
-void QUIC(fX_Info& fx_info, Trace_Info& trace, uint32_t maxIter, QUIC_method method)
+void main(fX_Info& fx_info, Trace_Info& trace, uint32_t maxIter, QUIC_method method)
 {
 #ifdef GDEBUG
     startgdb();
